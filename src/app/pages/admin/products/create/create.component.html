@@ -1,0 +1,134 @@
+<div class="row col-md-6 mt-5">
+  <h3>ADD Products</h3>
+  <form method="POST" [formGroup]="productsFormCreate" (ngSubmit)="onCreate()">
+    <!-- Tên sản phẩm -->
+    <div class="form-group">
+      <label for="title">Tên sản phẩm</label>
+      <input
+        class="form-control"
+        formControlName="title"
+        type="text"
+        id="title"
+      />
+      <div
+        *ngIf="
+          productsFormCreate.controls['title'].errors?.['required'] &&
+          productsFormCreate.controls['title'].touched
+        "
+        class="text-danger small mt-3"
+      >
+        Tên sản phẩm là bắt buộc *
+      </div>
+      <div
+        *ngIf="
+          productsFormCreate.controls['title'].errors?.['minlength'] &&
+          productsFormCreate.controls['title'].touched
+        "
+        class="text-danger small mt-3"
+      >
+        Tên sản phẩm tối thiểu 3 kí tự *
+      </div>
+    </div>
+
+    <!-- Mô tả sản phẩm -->
+    <div class="form-group">
+      <label for="description">Mô tả sản phẩm</label>
+      <textarea
+        class="form-control"
+        formControlName="description"
+        id="description"
+        rows="3"
+      ></textarea>
+      <div
+        *ngIf="
+          productsFormCreate.controls['description'].errors?.['required'] &&
+          productsFormCreate.controls['description'].touched
+        "
+        class="text-danger small mt-3"
+      >
+        Mô tả sản phẩm là bắt buộc *
+      </div>
+    </div>
+
+    <!-- Giá sản phẩm -->
+    <div class="form-group">
+      <label for="price">Giá sản phẩm</label>
+      <input
+        class="form-control"
+        formControlName="price"
+        type="number"
+        id="price"
+      />
+      <div
+        *ngIf="
+          productsFormCreate.controls['price'].errors?.['required'] &&
+          productsFormCreate.controls['price'].touched
+        "
+        class="text-danger small mt-3"
+      >
+        Giá sản phẩm là bắt buộc *
+      </div>
+      <div
+        *ngIf="
+          productsFormCreate.controls['price'].errors?.['min'] &&
+          productsFormCreate.controls['price'].touched
+        "
+        class="text-danger small mt-3"
+      >
+        Giá sản phẩm phải là số dương *
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select class="form-control" id="category" formControlName="category">
+        <option value="1">Laptop</option>
+        <option value="2">PC</option>
+      </select>
+      @if(productsFormCreate.controls['category'].errors?.['required'] &&
+      productsFormCreate.controls['category'].touched ) {
+      <small class="text-danger text-small">Category is Required</small>
+      }
+    </div>
+
+    <!-- Ảnh sản phẩm -->
+    <div class="form-group">
+      <label for="thumbnail">Ảnh</label>
+      <input
+        class="form-control"
+        formControlName="thumbnail"
+        type="text"
+        id="thumbnail"
+      />
+      <div
+        *ngIf="
+          productsFormCreate.controls['thumbnail'].errors?.['required'] &&
+          productsFormCreate.controls['thumbnail'].touched
+        "
+        class="text-danger small mt-3"
+      >
+        Ảnh sản phẩm là bắt buộc *
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="form-check">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="dropdownCheck"
+          formControlName="isShowing"
+          checked
+        />
+        <label class="form-check-label" for="dropdownCheck"> Is Show </label>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="productsFormCreate.invalid"
+      class="btn btn-primary mt-3"
+    >
+      Thêm sản phẩm
+    </button>
+  </form>
+</div>

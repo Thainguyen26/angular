@@ -1,0 +1,74 @@
+.btn-success {
+  background-color: aquamarine;
+  width: 50px;
+}
+.btn-danger {
+  background-color: red;
+}
+/* 
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    font-family: "Arial, sans-serif";
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+  }
+  
+  .styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  } */
+.admin-layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  /* Adjust the width as needed */
+  background-color: #f8f9fa;
+  /* Customize the sidebar color */
+  min-height: 100vh;
+  /* Ensure sidebar height covers the full viewport */
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+#page-wrapper {
+  padding: 20px;
+  background-color: #ffffff;
+  /* Adjust the background as needed */
+  min-height: calc(100vh - 40px);
+  /* Adjust for padding */
+}
+
+.table {
+  width: 100%;
+  margin-top: 20px;
+}

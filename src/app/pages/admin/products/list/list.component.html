@@ -1,0 +1,50 @@
+<h1 class="page-header mt-5">List Products</h1>
+<button class="btn btn-primary" routerLink="/admin/products/create">
+  ADD Products
+</button>
+<table class="table table-striped text-center" border="1px">
+  <thead>
+    <tr>
+      <th>ImageUrl</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products; let i = index">
+      <td>
+        <img
+          style="width: 100px"
+          src="{{ p.thumbnail }}"
+          alt=""
+          routerLink="/products/detail/{{ p.id }}"
+        />
+      </td>
+      <td>{{ p.title }}</td>
+      <td>{{ p.description }}</td>
+      <td>{{ p.category }}</td>
+      <td>{{ p.price }}</td>
+      <td style="width: 200px">
+        <button
+          class="btn btn-success m-2"
+          routerLink="/admin/products/edit/{{ p.id }}"
+          (click)="onEdit(p.id)"
+        >
+          Edit
+        </button>
+        <button class="btn btn-danger" (click)="onDel(p.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls
+  (pageChange)="currentPage = $event"
+  style="text-align: center"
+></pagination-controls>
+<!-- </div> -->
+<!-- </div>
+      </div>
+    </div> -->
