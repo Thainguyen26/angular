@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Products } from '../types/products';
-import { ToastrService } from 'ngx-toastr';
 
 const _api = 'http://localhost:3000/';
 

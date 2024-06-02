@@ -7,9 +7,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { NgToastModule, NgToastService } from 'ng-angular-popup';
+import { RegiterComponent } from '../regiter/regiter.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +22,9 @@ import { FooterComponent } from '../../components/footer/footer.component';
     ReactiveFormsModule,
     HeaderComponent,
     FooterComponent,
+    RegiterComponent,
+    NgToastModule,
+    NgxPaginationModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
@@ -29,7 +34,8 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router // private toastr: ToastrService
+    private router: Router,
+    private toast: NgToastService // private toastr: ToastrService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -39,12 +45,22 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
+      console.log(this.loginForm);
       // Xử lý đăng nhập ở đây
       // Ví dụ: gọi service để thực hiện đăng nhập, sau đó chuyển hướng hoặc hiển thị thông báo
-      // this.toastr.success('Đăng nhập thành công!', 'Thành công');
-      this.router.navigate(['/home']);
+      this.toast.success({
+        detail: 'Success',
+        summary: 'Đăng nhập thành công',
+        duration: 5000,
+      });
+      this.router.navigate(['/']);
     } else {
-      // this.toastr.error('Vui lòng kiểm tra lại thông tin đăng nhập', 'Lỗi');
+      this.toast.error({
+        detail: 'Error',
+        summary: 'Đăng nhập không thành công',
+        duration: 5000,
+        sticky: true,
+      });
     }
   }
 }

@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CreateComponent } from './pages/admin/products/create/create.component';
 import { EditComponent } from './pages/admin/products/edit/edit.component';
+import { RegiterComponent } from './pages/regiter/regiter.component';
 
 export const routes: Routes = [
   {
@@ -43,6 +44,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegiterComponent,
   },
   {
     path: '**',
