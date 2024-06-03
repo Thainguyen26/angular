@@ -2604,6 +2604,52 @@
       "email": "thainhph37455@fpt.edu.vn.com",
       "password": "qqqqqqqqqqqqq",
       "id": 67
+    },
+    {
+      "email": "thainguyen2662004@gmail.com",
+      "password": "12341234",
+      "id": 68
+    },
+    {
+      "username": "thai2662004",
+      "email": "thainhph37455@fpt.edu.vn.com",
+      "password": "111111111",
+      "ConfirmPassword": "111111111",
+      "id": 69
+    },
+    {
+      "email": "thainhpha37455@fpt.edu.vn.com",
+      "password": "$2a$10$RyxnjykQlxEtqFje205ss.Mopi8OX2TDVXYC.Q.QoRPCR2QY5og6y",
+      "username": "yrtknmuz",
+      "id": 70
+    },
+    {
+      "email": "thainguysen2662004@gmail.com",
+      "password": "$2a$10$rOWGFu3UFEkqge/MDb24SOGylkVXe2EiMlvMmeyHNKNWkqhM6sfzW",
+      "username": "thai2662004",
+      "ConfirmPassword": "111111",
+      "id": 71
+    },
+    {
+      "email": "thainguyccen2662004@gmail.com",
+      "password": "$2a$10$uKlSAY6Y1AFROwAekGdjiOoruaWcdRiL0IDFODjhpnc4zrT6MmKR6",
+      "username": "thai2662004",
+      "ConfirmPassword": "111111",
+      "id": 72
+    },
+    {
+      "email": "thainhp1h37455@fpt.edu.vn.com",
+      "password": "$2a$10$rRYcf1FMn228jUleWgbDQOpFtvptqURdGlXYb9AsjEASuz3biWxVK",
+      "username": "thai112662004",
+      "ConfirmPassword": "111111",
+      "id": 73
+    },
+    {
+      "email": "thai266200f6@gmail.com",
+      "password": "$2a$10$oGAmIp.SyNz0gb.6cr0L.eeGljgdPfOISwKMgw45wDuvetcWbtT6i",
+      "username": "thainguyen2662004@gmail.com",
+      "ConfirmPassword": "111111",
+      "id": 74
     }
   ]
 }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../types/user';
 import { Observable } from 'rxjs';
 
-const api = 'http://localhost:3000/';
+const api = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,7 @@ const api = 'http://localhost:3000/';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  Create(data: any): Observable<any> {
-    return this.http.post<Array<User>>(`${api}users/`, data);
+  Create(data: User) {
+    return this.http.post(`${api}/register`, data);
   }
 }

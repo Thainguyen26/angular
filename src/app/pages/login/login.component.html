@@ -26,12 +26,19 @@
             required
           />
         </div>
-        <button routerLink="/register" class="btn btn-primary w-100 mb-2">
-          Đăng Ký
-        </button>
-        <button routerLink="/login" type="submit" class="btn btn-warning w-100">
+
+        <button
+          routerLink="/login"
+          type="submit"
+          class="btn btn-warning w-100"
+          [disabled]="loginForm.invalid"
+        >
           Đăng Nhập
         </button>
+        <h6 class="mt-2">
+          Bạn chưa có tài khoản chưa ?
+          <a style="color: rgb(0, 42, 255)" routerLink="/register">Đăng ký</a>
+        </h6>
       </form>
     </div>
   </div>
